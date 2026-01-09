@@ -11,14 +11,14 @@ we should give a basic background introduction.
 ## Methodology (Model Architecture)
 we should show the model architecture with a picture.
 
-## Result ()
+## Result (Comparision Tables)
 we shoud show some tables with different evaluation metrics.
 
 ## Reference 
-
+we should reference the papers which provides the datasets we used and the benchmark models compared with us.
 
 ## Acknowledgments
 Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
 
 ## Website License
-
+website license
