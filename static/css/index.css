@@ -751,3 +751,18 @@ a:focus {
 
 
 
+/* Institution Logos (Affiliation) */
+.logo {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;                /* 两个 logo 之间的间距 */
+}
+
+.logo img {
+  height: 42px;             /* ⭐ 控制整体大小（推荐 36–48px） */
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
