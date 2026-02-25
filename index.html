@@ -376,10 +376,10 @@
         <div class="content">
           <h2 class="title is-3">Model Architecture</h2>
             <p>
-              <img src="static/images/carousel2.jpg" alt="Model Architecture" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy">
+              <img src="static/images/DeltaGateNetOverview.png" alt="Model Architecture" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy">
             </p>
             <p>
-                  We design a model called DeltaGateNet which achieve the SOTA performance.
+                  Overview of the proposed DeltaGateNet. DeltaGateNet is a simple structure that contains three main components. Stage one is the Bidirectional Delta module that computes the differential across timesteps. Stage two is a gated temporal convolution block that encodes temporal features and selects activation using a soft gating mechanism. In stage three, the encoded temporal feature maps are fed into the multilayer perceptron that produces three probabilities representing the predicted classes. Note that under most experimental settings and datasets, fatigue levels increase concurrently as time progresses, as subjects are more likely to grow tired towards the end of the experiment.
             </p>
         </div>
       </div>
@@ -395,33 +395,26 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
+        <img src="static/images/BidirectionalDelta.png" alt="First research result visualization" loading="lazy"/>
         <!-- TODO: Replace with description of this result -->
         <h2 class="subtitle has-text-centered">
-          First image description.
+          The Bidirectional Delta module computes a first-order temporal difference that approximates the differential of EEG data as fatigue is encoded in changes over time. The module leverages the ReLU activation function to separate the changes into positive and negative differentials to contain richer temporal information for further processing.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
+        <img src="static/images/GatedTemporalConv.png" alt="Second research result visualization" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
-          Second image description.
+          The Gated Temporal Convolution projects the differentials to a higher-dimensional latent space to extract deeper information and then performs a local temporal convolution that captures short-term EEG signals. A GELU activation and 1x1 depthwise convolution block are utilized to select significant features to pass through. Residual blocks are used to select which features of signals to amplify or diminish.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
+        <img src="static/images/MLP.png" alt="Third research result visualization" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
-         Third image description.
+         Multilayer Perceptron.
        </h2>
      </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
   </div>
 </div>
 </div>
@@ -435,10 +428,31 @@
       <div class="column is-full">
         <div class="content">
           <h2 class="title is-3">Results</h2>
-          <div class="level-set has-text-justified">
-              <p>
-                We show the results with the tables.
-              </p>
+              <div class="container">
+                <div id="results-carousel" class="carousel results-carousel">
+                 <div class="item">
+                  <!-- TODO: Replace with your research result images -->
+                  <img src="static/images/BidirectionalDelta.png" alt="First research result visualization" loading="lazy"/>
+                  <!-- TODO: Replace with description of this result -->
+                  <h2 class="subtitle has-text-centered">
+                    The Bidirectional Delta module computes a first-order temporal difference that approximates the differential of EEG data as fatigue is encoded in changes over time. The module leverages the ReLU activation function to separate the changes into positive and negative differentials to contain richer temporal information for further processing.
+                  </h2>
+                </div>
+                <div class="item">
+                  <!-- Your image here -->
+                  <img src="static/images/GatedTemporalConv.png" alt="Second research result visualization" loading="lazy"/>
+                  <h2 class="subtitle has-text-centered">
+                    The Gated Temporal Convolution projects the differentials to a higher-dimensional latent space to extract deeper information and then performs a local temporal convolution that captures short-term EEG signals. A GELU activation and 1x1 depthwise convolution block are utilized to select significant features to pass through. Residual blocks are used to select which features of signals to amplify or diminish.
+                  </h2>
+                </div>
+                <div class="item">
+                  <!-- Your image here -->
+                  <img src="static/images/MLP.png" alt="Third research result visualization" loading="lazy"/>
+                  <h2 class="subtitle has-text-centered">
+                   Multilayer Perceptron.
+                 </h2>
+               </div>
+            </div>
           </div>
         </div>
       </div>
