@@ -97,3 +97,47 @@ python eval.py --dataset sadt_2022 --checkpoint ./checkpoints/best_model.pth
 
 ```
 
+---
+
+## 📊 Experimental Results
+
+Our model demonstrates superior performance compared to baseline models like EEGNet and TSception.
+
+| Dataset | Evaluation Mode | Accuracy (Acc) |
+| --- | --- | --- | --- |
+| **SEED-VIG** | Intra-subject | **81.89%** | 
+| **SADT 2022** | Intra-subject | **96.81%** | 
+| **SADT 2952** | Inter-subject | **96.84%** | 
+| **SEED-VIG** | Inter-subject | **55.55%** | 
+| **SADT 2022** | Inter-subject | **83.21%** | 
+| **SADT 2952** | Inter-subject | **84.49%** | 
+
+---
+
+## 📝 Citation
+
+If you find this work or code helpful in your research, please cite our paper:
+
+```bibtex
+@article{yip2026bidirectional,
+  title={Bidirectional Temporal Dynamics Modeling for EEG-based Driving Fatigue Recognition},
+  author={Yip, Tin Po and Wang, Jianming and Miao, Yutao and Zhang, Jiayan and Zhao, Yunxu and Ouyang, Xiaomin and Li, Zhihong and Zhang, Nevin L},
+  journal={arxiv},
+  year={2026}
+}
+
+```
+
+---
+
+## 📧 Contact
+
+For any questions, please contact:
+
+* **Name:** WANG Jianming
+* **Email:** jwanggb@cse.ust.hk
+* **Affiliation:** Hong Kong University of Science and Technology
+
+```
+
+
