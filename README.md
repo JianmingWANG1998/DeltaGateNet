@@ -1,6 +1,6 @@
 # DeltaGateNet: Bidirectional Temporal Dynamics Modeling for EEG-based Driving Fatigue Recognition
 
-[![Paper](https://img.shields.io/badge/Paper-PDF-red)](你的论文链接)
+[![Paper](https://img.shields.io/badge/Paper-PDF-red)](https://arxiv.org/abs/2602.14071)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](你的Colab链接)
 
