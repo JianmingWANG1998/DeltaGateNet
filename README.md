@@ -104,7 +104,7 @@ python eval.py --dataset sadt_2022 --checkpoint ./checkpoints/best_model.pth
 Our model demonstrates superior performance compared to baseline models like EEGNet and TSception.
 
 | Dataset | Evaluation Mode | Accuracy (Acc) |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | **SEED-VIG** | Intra-subject | **81.89%** | 
 | **SADT 2022** | Intra-subject | **96.81%** | 
 | **SADT 2952** | Inter-subject | **96.84%** | 
@@ -137,7 +137,4 @@ For any questions, please contact:
 * **Name:** WANG Jianming
 * **Email:** jwanggb@cse.ust.hk
 * **Affiliation:** Hong Kong University of Science and Technology
-
-```
-
 
