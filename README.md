@@ -67,7 +67,6 @@ The model is evaluated on **SEED-VIG** and **SADT**. Please ensure your data dir
 ```text
 data/
 ├── SEED_VIG/
-│   ├── EEG_Feature_2Ch/
 │   └── raw_data/
 └── SADT/
     ├── SADT_2022/
