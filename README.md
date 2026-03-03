@@ -106,7 +106,7 @@ Our model demonstrates superior performance compared to baseline models like EEG
 | --- | --- | --- |
 | **SEED-VIG** | Intra-subject | **81.89%** | 
 | **SADT 2022** | Intra-subject | **96.81%** | 
-| **SADT 2952** | Inter-subject | **96.84%** | 
+| **SADT 2952** | Intra-subject | **96.84%** | 
 | **SEED-VIG** | Inter-subject | **55.55%** | 
 | **SADT 2022** | Inter-subject | **83.21%** | 
 | **SADT 2952** | Inter-subject | **84.49%** | 
