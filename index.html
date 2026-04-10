@@ -21,7 +21,6 @@
   <meta property="og:image" content="https://raw.githubusercontent.com/JianmingWANG1998/DeltaGateNet/main/static/images/social_preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="DeltaGateNet - EEG Driving Fatigue Recognition">
   <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
   <meta property="article:author" content="YIP Tin Po">
   <meta property="article:section" content="Research">
@@ -45,22 +44,19 @@
   <meta name="citation_conference_title" content="arXiv Preprint">
   <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2602.14071.pdf">
   
-  <!-- Additional SEO -->
   <meta name="theme-color" content="#2563eb">
   <meta name="msapplication-TileColor" content="#2563eb">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   
-  <!-- Preconnect for performance -->
+  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
   <title>DeltaGateNet | Bidirectional Temporal Dynamics for EEG Driving Fatigue Recognition</title>
   
-  <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/foggy.ico">
   <link rel="apple-touch-icon" href="static/images/foggy.ico">
   
@@ -81,10 +77,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
   
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Deferred JS -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -92,95 +86,101 @@
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
   
-  <!-- Custom CSS for unified proportions -->
   <style>
-    /* Global image proportion consistency */
+    /* ========== 全局比例统一 ========== */
     .unified-image {
       max-width: 100%;
-      max-height: 420px;
+      max-height: 360px;
       width: auto;
       height: auto;
       display: block;
       margin: 0 auto;
       object-fit: contain;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    
     .unified-image:hover {
       transform: scale(1.01);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
     }
     
-    /* Model architecture section - unified spacing and alignment */
-    .model-arch-container {
-      max-width: 960px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 1rem 0.5rem;
-    }
-    
-    .model-arch-container .content p {
-      max-width: 860px;
-      margin-left: auto;
-      margin-right: auto;
+    /* 架构图容器 - 固定比例、居中 */
+    .arch-figure {
+      background: #fefefe;
+      border-radius: 20px;
+      padding: 1.2rem;
+      margin: 1rem 0 1.5rem 0;
       text-align: center;
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: #2c3e50;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .arch-figure img {
+      max-height: 420px;
+      width: auto;
+      margin: 0 auto;
     }
     
-    .model-arch-container .content img {
-      margin-bottom: 1.8rem;
-      border-radius: 16px;
+    /* 三列模块卡片 - 统一高度与对齐 */
+    .module-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2.5rem 0 1rem;
     }
-    
-    /* Carousel images uniform styling */
-    .carousel .item img {
-      max-height: 380px;
+    .module-card {
+      flex: 1;
+      min-width: 260px;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 1.5rem 1.2rem 1.8rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-align: center;
+      border: 1px solid #eef2f6;
+    }
+    .module-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 28px rgba(0,0,0,0.08);
+    }
+    .module-card img {
+      max-height: 180px;
       width: auto;
       max-width: 100%;
-      margin: 0 auto;
-      display: block;
-      object-fit: contain;
+      margin-bottom: 1rem;
       border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     }
-    
-    .carousel .subtitle {
-      max-width: 800px;
-      margin: 1.2rem auto 0 auto;
-      font-size: 0.95rem;
+    .module-card h3 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 0.75rem 0 0.5rem;
+      color: #1e293b;
+    }
+    .module-card p {
+      font-size: 0.9rem;
       line-height: 1.5;
-      color: #4a5568;
+      color: #334155;
     }
     
-    /* Section spacing harmony */
+    /* 统一标题与文字宽度 */
+    .content p {
+      max-width: 880px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .title.is-3 {
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 1.2rem;
+    }
     .section {
-      padding: 2.5rem 1.5rem;
+      padding: 2.8rem 1.5rem;
     }
-    
     .hero.is-light {
       background-color: #f8fafc;
     }
     
-    .title.is-3 {
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-    
-    .content h2.title {
-      text-align: center;
-    }
-    
-    /* Center captions and improve readability */
-    .has-text-centered img {
-      margin-bottom: 1rem;
-    }
-    
+    /* BibTeX & 按钮 */
     .bibtex-header {
       display: flex;
       justify-content: space-between;
@@ -188,7 +188,6 @@
       flex-wrap: wrap;
       margin-bottom: 0.75rem;
     }
-    
     .copy-bibtex-btn {
       background: #2563eb;
       border: none;
@@ -202,11 +201,7 @@
       gap: 0.5rem;
       transition: background 0.2s;
     }
-    
-    .copy-bibtex-btn:hover {
-      background: #1d4ed8;
-    }
-    
+    .copy-bibtex-btn:hover { background: #1d4ed8; }
     .logo {
       display: flex;
       justify-content: center;
@@ -214,13 +209,7 @@
       margin-top: 1rem;
       flex-wrap: wrap;
     }
-    
-    .logo img {
-      height: 48px;
-      width: auto;
-      opacity: 0.9;
-    }
-    
+    .logo img { height: 48px; width: auto; opacity: 0.9; }
     .scroll-to-top {
       position: fixed;
       bottom: 2rem;
@@ -237,26 +226,14 @@
       transition: all 0.2s;
       z-index: 100;
     }
-    
-    .scroll-to-top:hover {
-      background-color: #1e40af;
-      transform: translateY(-3px);
-    }
-    
+    .scroll-to-top:hover { background-color: #1e40af; transform: translateY(-3px); }
     @media (max-width: 768px) {
-      .unified-image, .carousel .item img {
-        max-height: 280px;
-      }
-      .model-arch-container .content p {
-        font-size: 0.95rem;
-      }
-      .section {
-        padding: 2rem 1rem;
-      }
+      .unified-image, .arch-figure img { max-height: 260px; }
+      .module-card img { max-height: 140px; }
+      .module-grid { gap: 1rem; }
     }
   </style>
   
-  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -269,279 +246,200 @@
     ],
     "datePublished": "2026-02-28",
     "url": "https://github.com/JianmingWANG1998/DeltaGateNet",
-    "keywords": ["EEG", "driving fatigue", "temporal dynamics", "deep learning"],
-    "isAccessibleForFree": true
+    "keywords": ["EEG", "driving fatigue", "temporal dynamics", "deep learning"]
   }
   </script>
 </head>
 <body>
 
-  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
+<button class="scroll-to-top" onclick="scrollToTop()" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
 
-  <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
+<main id="main-content">
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Bidirectional Temporal Dynamics Modeling for EEG-based Driving Fatigue Recognition</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://yip-tin-po-alex.github.io" target="_blank">YIP Tin Po</a><sup>*</sup>,</span>
+            <span class="author-block"><a href="https://jianmingwang1998.github.io/" target="_blank">Jianming WANG</a><sup>*</sup>,</span>
+            <span class="author-block">Yutao Miao,</span>
+            <span class="author-block">Jiayan Zhang,</span>
+            <span class="author-block">Yunxu Zhao,</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Xiaomin Ouyang,</span>
+            <span class="author-block">Zhihong Li,</span>
+            <span class="author-block">Nevin L. Zhang</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Hong Kong University of Science and Technology</span> &nbsp;|&nbsp;
+            <span class="author-block">Peking University</span><br>
+            <span class="author-block">arXiv Preprint 2026</span>
+            <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+            <p class="logo">
+              <img src="static/images/hkustlogo.svg" alt="HKUST logo" loading="lazy">
+              <img src="static/images/pkulogo.svg" alt="PKU logo" loading="lazy">
+            </p>
+          </div>
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Bidirectional Temporal Dynamics Modeling for EEG-based Driving Fatigue Recognition</h1>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><a href="https://yip-tin-po-alex.github.io" target="_blank">YIP Tin Po</a><sup>*</sup>,</span>
-              <span class="author-block"><a href="https://jianmingwang1998.github.io/" target="_blank">Jianming WANG</a><sup>*</sup>,</span>
-              <span class="author-block">Yutao Miao,</span>
-              <span class="author-block">Jiayan Zhang,</span>
-              <span class="author-block">Yunxu Zhao,</span>
-            </div>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">Xiaomin Ouyang,</span>
-              <span class="author-block">Zhihong Li,</span>
-              <span class="author-block">Nevin L. Zhang</span>
-            </div>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">Hong Kong University of Science and Technology</span>
-              <span class="author-block">Peking University</span>
-              <br>
-              <span class="author-block">arXiv Preprint 2026</span>
-              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-              <p class="logo">
-                <img src="static/images/hkustlogo.svg" alt="HKUST logo" loading="lazy">
-                <img src="static/images/pkulogo.svg" alt="PKU logo" loading="lazy">
-              </p>
-            </div>
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2602.14071.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://github.com/JianmingWANG1998/DeltaGateNet/" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fab fa-github"></i></span>
-                    <span>Code</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2602.14071" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="ai ai-arxiv"></i></span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://figshare.com/articles/dataset/Multi-channel_EEG_recordings_during_a_sustained-attention_driving_task/6427334" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fas fa-database"></i></span>
-                    <span>SADT Dataset</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://bcmi.sjtu.edu.cn/home/seed/seed-vig.html" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fas fa-database"></i></span>
-                    <span>SEED-VIG Dataset</span>
-                  </a>
-                </span>
-              </div>
+            <div class="publication-links">
+              <span class="link-block"><a href="https://arxiv.org/pdf/2602.14071.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span></a></span>
+              <span class="link-block"><a href="https://github.com/JianmingWANG1998/DeltaGateNet/" target="_blank" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a></span>
+              <span class="link-block"><a href="https://arxiv.org/abs/2602.14071" target="_blank" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span></a></span>
+              <span class="link-block"><a href="https://figshare.com/articles/dataset/Multi-channel_EEG_recordings_during_a_sustained-attention_driving_task/6427334" target="_blank" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-database"></i></span><span>SADT Dataset</span></a></span>
+              <span class="link-block"><a href="https://bcmi.sjtu.edu.cn/home/seed/seed-vig.html" target="_blank" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-database"></i></span><span>SEED-VIG Dataset</span></a></span>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Abstract -->
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              Driving fatigue is a major contributor to traffic accidents and poses a serious threat to road safety. Electroencephalography (EEG) provides a direct measurement of neural activity, yet EEG-based fatigue recognition is hindered by strong non-stationarity and asymmetric neural dynamics. To address these challenges, we propose DeltaGateNet, a novel framework that explicitly captures bidirectional temporal dynamics for EEG-based driving fatigue recognition. Our key idea is to introduce a Bidirectional Delta module that decomposes first-order temporal differences into positive and negative components, enabling explicit modeling of asymmetric neural activation and suppression patterns. Furthermore, we design a Gated Temporal Convolution module to capture long-term temporal dependencies for each EEG channel using depthwise temporal convolutions and residual learning, preserving channel-wise specificity while enhancing temporal representation robustness. Extensive experiments conducted under both intra-subject and inter-subject evaluation settings on the public SEED-VIG and SADT driving fatigue datasets demonstrate that DeltaGateNet consistently outperforms existing methods. On SEED-VIG, DeltaGateNet achieves an intra-subject accuracy of 81.89% and an inter-subject accuracy of 55.55%. On the balanced SADT 2022 dataset, it attains intra-subject and inter-subject accuracies of 96.81% and 83.21%, respectively, while on the unbalanced SADT 2952 dataset, it achieves 96.84% intra-subject and 84.49% inter-subject accuracy. These results indicate that explicitly modeling bidirectional temporal dynamics yields robust and generalizable performance under varying subject and class-distribution conditions.
-            </p>
-          </div>
+<!-- Abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>Driving fatigue is a major contributor to traffic accidents and poses a serious threat to road safety. Electroencephalography (EEG) provides a direct measurement of neural activity, yet EEG-based fatigue recognition is hindered by strong non-stationarity and asymmetric neural dynamics. To address these challenges, we propose DeltaGateNet, a novel framework that explicitly captures bidirectional temporal dynamics for EEG-based driving fatigue recognition. Our key idea is to introduce a Bidirectional Delta module that decomposes first-order temporal differences into positive and negative components, enabling explicit modeling of asymmetric neural activation and suppression patterns. Furthermore, we design a Gated Temporal Convolution module to capture long-term temporal dependencies for each EEG channel using depthwise temporal convolutions and residual learning. Extensive experiments on SEED-VIG and SADT datasets demonstrate that DeltaGateNet consistently outperforms existing methods, achieving 96.84% intra-subject and 84.49% inter-subject accuracy on SADT-2952.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Model Architecture - UNIFIED PROPORTIONS -->
-  <section class="section hero is-small">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-full">
-          <div class="content model-arch-container">
-            <h2 class="title is-3">Model Architecture</h2>
-            <p class="has-text-centered">
-              <img src="static/images/DeltaGateNetOverview.png" alt="DeltaGateNet Architecture Overview" 
-                   class="unified-image" loading="lazy" style="cursor: pointer;">
-            </p>
-            <p class="has-text-centered">
-              <strong>DeltaGateNet overview.</strong> The framework comprises three main stages: 
-              (1) <strong>Bidirectional Delta module</strong> capturing asymmetric temporal differences, 
-              (2) <strong>Gated Temporal Convolution block</strong> for channel-wise long-range dependency modeling with soft gating, 
-              (3) <strong>Multilayer Perceptron</strong> for final fatigue level classification (3 classes). 
-              The architecture preserves EEG channel specificity while learning robust bidirectional dynamics.
-            </p>
+<!-- ========== Model Architecture - 统一比例区域 ========== -->
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Model Architecture</h2>
+          <!-- 主架构图 - 统一容器 -->
+          <div class="arch-figure">
+            <img src="static/images/DeltaGateNetOverview.png" alt="DeltaGateNet Overall Architecture" class="unified-image" loading="lazy" style="max-height: 420px;">
           </div>
+          <p class="has-text-centered" style="margin-top: 0.5rem; max-width: 860px;">
+            <strong>DeltaGateNet overview.</strong> The framework consists of three main stages: 
+            <strong>Bidirectional Delta module</strong> (positive/negative differential separation), 
+            <strong>Gated Temporal Convolution block</strong> (channel-wise temporal modeling + soft gating), and 
+            <strong>Multilayer Perceptron</strong> for final fatigue classification (3 classes: alert, mildly fatigued, severely fatigued).
+          </p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Modules Carousel -->
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <h2 class="title is-3">Key Modules</h2>
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item">
-            <img src="static/images/BidirectionalDelta.png" alt="Bidirectional Delta Module" class="unified-image" loading="lazy">
-            <h2 class="subtitle has-text-centered">
-              <strong>Bidirectional Delta Module</strong> — Decomposes first-order temporal differences into positive and negative streams via ReLU, capturing asymmetric neural activation/suppression patterns essential for fatigue dynamics.
-            </h2>
-          </div>
-          <div class="item">
-            <img src="static/images/GatedTemporalConv.png" alt="Gated Temporal Convolution" class="unified-image" loading="lazy">
-            <h2 class="subtitle has-text-centered">
-              <strong>Gated Temporal Convolution</strong> — Depthwise temporal conv + GELU gating mechanism with residual connections, selectively amplifying salient temporal features while preserving channel-wise specificity.
-            </h2>
-          </div>
-          <div class="item">
-            <img src="static/images/MLP.png" alt="Multilayer Perceptron" class="unified-image" loading="lazy">
-            <h2 class="subtitle has-text-centered">
-              <strong>Multilayer Perceptron</strong> — Compact classification head mapping enriched temporal representations to fatigue level probabilities (alert, mildly fatigued, severely fatigued).
-            </h2>
-          </div>
+<!-- 三关键模块 - 卡片式布局，比例完全统一 -->
+<section class="hero is-small">
+  <div class="hero-body" style="padding-top: 0;">
+    <div class="container">
+      <h2 class="title is-3" style="margin-bottom: 1rem;">Core Components</h2>
+      <div class="module-grid">
+        <div class="module-card">
+          <img src="static/images/BidirectionalDelta.png" alt="Bidirectional Delta" loading="lazy">
+          <h3>Bidirectional Delta</h3>
+          <p>Δ⁺ (increasing) & Δ⁻ (decreasing) decomposition via ReLU. Captures asymmetric neural activation and suppression patterns from first-order temporal differences.</p>
+        </div>
+        <div class="module-card">
+          <img src="static/images/GatedTemporalConv.png" alt="Gated Temporal Convolution" loading="lazy">
+          <h3>Gated Temporal Conv</h3>
+          <p>Depthwise temporal conv + GELU gating + residual connections. Selects salient temporal features while preserving channel-wise specificity.</p>
+        </div>
+        <div class="module-card">
+          <img src="static/images/MLP.png" alt="Multilayer Perceptron" loading="lazy">
+          <h3>Multilayer Perceptron</h3>
+          <p>Compact MLP with LeakyReLU, BatchNorm, Dropout (0.5). Projects enriched embeddings to three fatigue-level probabilities.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Results Comparison Carousel -->
-  <section class="section hero is-small">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-full">
-          <div class="content">
-            <h2 class="title is-3">Experimental Results</h2>
-          </div>
+<!-- 实验结果轮播 -->
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Experimental Results</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <img src="static/images/Intra_comparison.png" alt="Intra-subject accuracy" class="unified-image" loading="lazy">
+          <h2 class="subtitle has-text-centered"><strong>Intra-subject performance.</strong> DeltaGateNet achieves 96.84% on SADT-2952 and 81.89% on SEED-VIG, surpassing existing methods.</h2>
+        </div>
+        <div class="item">
+          <img src="static/images/Inter_comparison.png" alt="Inter-subject generalization" class="unified-image" loading="lazy">
+          <h2 class="subtitle has-text-centered"><strong>Inter-subject generalization.</strong> Robust cross-subject accuracy (84.49% on SADT-2952) demonstrating superior generalization.</h2>
+        </div>
+        <div class="item">
+          <img src="static/images/band_specific_correlations.png" alt="Frequency-band correlation" class="unified-image" loading="lazy">
+          <h2 class="subtitle has-text-centered"><strong>Frequency-band correlation.</strong> BidirectionalDelta energy correlates strongly with PERCLOS, especially in theta/alpha bands.</h2>
         </div>
       </div>
     </div>
-  </section>
-  
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <div id="results-carousel-2" class="carousel results-carousel">
-          <div class="item">
-            <img src="static/images/Intra_comparison.png" alt="Intra-subject accuracy comparison" class="unified-image" loading="lazy">
-            <h2 class="subtitle has-text-centered">
-              <strong>Intra-subject performance.</strong> DeltaGateNet consistently outperforms baselines across SEED-VIG and SADT benchmarks, achieving 96.84% accuracy on unbalanced SADT-2952.
-            </h2>
-          </div>
-          <div class="item">
-            <img src="static/images/Inter_comparison.png" alt="Inter-subject generalization" class="unified-image" loading="lazy">
-            <h2 class="subtitle has-text-centered">
-              <strong>Inter-subject generalization.</strong> Superior cross-subject robustness (84.49% on SADT-2952) demonstrating the model's ability to learn fatigue-relevant neural patterns independent of individual variability.
-            </h2>
-          </div>
-          <div class="item">
-            <img src="static/images/band_specific_correlations.png" alt="Frequency band correlations" class="unified-image" loading="lazy">
-            <h2 class="subtitle has-text-centered">
-              <strong>Frequency-band-specific correlation.</strong> BidirectionalDelta energy shows strong positive correlation with PERCLOS, especially in theta and alpha bands, validating neurophysiological relevance.
-            </h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- BibTeX Citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{yip2026bidirectional,
+<!-- BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <div class="bibtex-header">
+      <h2 class="title">BibTeX</h2>
+      <button class="copy-bibtex-btn" onclick="copyBibTeX()"><i class="fas fa-copy"></i><span>Copy</span></button>
+    </div>
+    <pre id="bibtex-code"><code>@article{yip2026bidirectional,
   title={Bidirectional Temporal Dynamics Modeling for EEG-based Driving Fatigue Recognition},
   author={Yip Tin Po and Jianming Wang and Yutao Miao and Jiayan Zhang and Yunxu Zhao and Xiaomin Ouyang and Zhihong Li and Nevin L. Zhang},
   journal={arXiv preprint arXiv:2602.14071},
   year={2026},
   url={https://arxiv.org/abs/2602.14071}
 }</code></pre>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content has-text-centered">
-            <p>© 2026 YIP Tin Po, Jianming Wang, et al. | DeltaGateNet | Licensed under CC BY 4.0</p>
-            <p><a href="https://github.com/JianmingWANG1998/DeltaGateNet" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a></p>
-          </div>
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>© 2026 YIP Tin Po, Jianming Wang, et al. | DeltaGateNet | CC BY 4.0</p>
+          <p><a href="https://github.com/JianmingWANG1998/DeltaGateNet" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a></p>
         </div>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script>
-    // Scroll to top functionality
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    
-    // Copy BibTeX to clipboard
-    function copyBibTeX() {
-      const bibtexCode = document.getElementById('bibtex-code').innerText;
-      navigator.clipboard.writeText(bibtexCode).then(() => {
-        const btn = document.querySelector('.copy-bibtex-btn');
-        const originalHTML = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
-        setTimeout(() => {
-          btn.innerHTML = originalHTML;
-        }, 2000);
-      }).catch(err => {
-        console.error('Failed to copy: ', err);
-        alert('Could not copy BibTeX, please manually select the text.');
-      });
-    }
-    
-    // Initialize carousels if Bulma Carousel is loaded
-    document.addEventListener('DOMContentLoaded', function() {
-      if (typeof bulmaCarousel !== 'undefined') {
-        var carousels = bulmaCarousel.attach('.carousel', {
-          slidesToScroll: 1,
-          slidesToShow: 1,
-          loop: true,
-          autoplay: false,
-          pagination: true,
-          navigation: true,
-          effect: 'slide',
-          duration: 500
-        });
-      } else {
-        console.log("Bulma Carousel not loaded yet, will retry.");
-        // Fallback: just add simple manual navigation warning
-        setTimeout(() => {
-          if (typeof bulmaCarousel !== 'undefined') {
-            bulmaCarousel.attach('.carousel', {
-              slidesToScroll: 1,
-              slidesToShow: 1,
-              loop: true,
-              navigation: true
-            });
-          }
-        }, 500);
-      }
+<script>
+  function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  function copyBibTeX() {
+    const text = document.getElementById('bibtex-code').innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.querySelector('.copy-bibtex-btn');
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
+      setTimeout(() => { btn.innerHTML = orig; }, 2000);
     });
-  </script>
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof bulmaCarousel !== 'undefined') {
+      bulmaCarousel.attach('.carousel', { slidesToScroll: 1, slidesToShow: 1, loop: true, navigation: true, pagination: true, autoplay: false });
+    }
+  });
+</script>
+</main>
 </body>
 </html>
